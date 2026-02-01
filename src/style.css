@@ -34,6 +34,7 @@ header {
   border-bottom: 1px solid var(--border);
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 
 header h1 {
@@ -57,6 +58,151 @@ header h1 {
 .back-link:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+/* Header Action Button */
+.header-action {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.header-action:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.header-action svg {
+  flex-shrink: 0;
+}
+
+/* Documentation Page */
+.docs-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.docs-section h2 {
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+.docs-section h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.docs-section p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.docs-section ul,
+.docs-section ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.docs-section li {
+  margin-bottom: 0.5rem;
+}
+
+.docs-section code {
+  background: var(--bg-tertiary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+.code-block {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.example-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.example-table th,
+.example-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.example-table th {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.example-table td {
+  color: var(--text-primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 main {
@@ -445,6 +591,17 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header-action {
+    position: static;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .header-action span {
+    display: none;
+  }
+
   .stats-bar {
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -452,6 +609,10 @@ footer p {
 
   .stat {
     flex: 1 1 80px;
+  }
+
+  .docs-section {
+    padding: 1.25rem;
   }
 
   .leaderboard-row {

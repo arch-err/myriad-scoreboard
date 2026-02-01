@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Score - Myriad Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">&larr; Back to Dashboard</a>
+    <h1>Register Team Score</h1>
+    <p class="subtitle">Submit your CTF results to the leaderboard</p>
+  </header>
+
+  <main>
+    <section class="docs-section">
+      <h2>Option 1: Pull Request (Recommended)</h2>
+      <p>This is the preferred method for team members who have GitHub access.</p>
+
+      <h3>Adding a New CTF Result</h3>
+      <ol>
+        <li><strong>Fork the repository</strong> (if you don't have write access)</li>
+        <li><strong>Create or edit a CTF file</strong> in the <code>ctfs/</code> directory</li>
+      </ol>
+
+      <p>File naming: <code>ctfs/&lt;ctf-slug&gt;.yaml</code></p>
+
+      <div class="code-block">
+        <pre><code>name: picoCTF 2024
+date: 2024-03-15
+url: https://picoctf.org    # optional
+results:
+  - team: Myriad Alpha
+    rank: 15
+    points: 4500
+  - team: Myriad Beta
+    rank: 42
+    points: 3200</code></pre>
+      </div>
+
+      <p>Then <strong>submit a Pull Request</strong> with your changes.</p>
+
+      <h3>Adding a New Team</h3>
+      <p>If your team isn't registered yet, edit <code>teams/teams.yaml</code>:</p>
+
+      <div class="code-block">
+        <pre><code>teams:
+  - id: your-team-id
+    name: Your Team Name
+    members:
+      - member1
+      - member2</code></pre>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <h2>Option 2: Issue Request</h2>
+      <p>For those without GitHub access or who prefer not to make direct edits.</p>
+
+      <a href="https://github.com/arch-err/myriad-dashboard/issues/new?template=score-request.yaml" class="btn btn-primary" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+        </svg>
+        Open Score Request Issue
+      </a>
+
+      <h3>Required Information</h3>
+      <ul>
+        <li><strong>CTF Name:</strong> Full name of the competition</li>
+        <li><strong>CTF Date:</strong> When the CTF ended (YYYY-MM-DD)</li>
+        <li><strong>Team Name:</strong> Must match an existing team name exactly</li>
+        <li><strong>Final Rank:</strong> Your team's final placement</li>
+        <li><strong>Points:</strong> Total points scored</li>
+      </ul>
+
+      <h3>Optional Information</h3>
+      <ul>
+        <li><strong>CTF URL:</strong> Link to the CTF website</li>
+        <li><strong>Proof:</strong> Screenshot or link to official results</li>
+      </ul>
+    </section>
+
+    <section class="docs-section">
+      <h2>Score Calculation</h2>
+      <p>The overall leaderboard uses <strong>relative internal placement</strong>:</p>
+      <ul>
+        <li>For each CTF, teams are ranked by their CTF placement</li>
+        <li>Score = (internal rank) / (total internal teams in that CTF)</li>
+        <li>Lower average score = better overall ranking</li>
+      </ul>
+
+      <h3>Example</h3>
+      <p>A CTF has 3 internal teams participating:</p>
+      <table class="example-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Internal Rank</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Team A (best CTF placement)</td>
+            <td>1st</td>
+            <td>1/3 = 0.333</td>
+          </tr>
+          <tr>
+            <td>Team B</td>
+            <td>2nd</td>
+            <td>2/3 = 0.667</td>
+          </tr>
+          <tr>
+            <td>Team C</td>
+            <td>3rd</td>
+            <td>3/3 = 1.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="https://github.com/arch-err/myriad-dashboard">View on GitHub</a></p>
+  </footer>
+</body>
+</html>

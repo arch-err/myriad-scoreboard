@@ -49,28 +49,6 @@ node scripts/build.js
 
 Open `docs/index.html` in your browser.
 
-## Repository Structure
-
-```
-myriad-dashboard/
-├── ctfs/                    # Score data (one YAML per CTF)
-├── teams/                   # Team metadata
-│   └── teams.yaml
-├── src/                     # Frontend source
-│   ├── index.html
-│   ├── team.html
-│   ├── style.css
-│   └── app.js
-├── scripts/
-│   └── build.js             # Build script
-├── docs/                    # Built output (GitHub Pages)
-└── .github/
-    ├── workflows/
-    │   └── build.yaml
-    └── ISSUE_TEMPLATE/
-        └── score-request.yaml
-```
-
 ## Teams
 
 Team definitions are in `teams/teams.yaml`. To add a new team, edit that file:

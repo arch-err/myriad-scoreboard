@@ -8,7 +8,7 @@ This is the preferred method for team members who have GitHub access.
 
 ### Adding a New CTF Result
 
-1. **Fork the repository** (if you don't have write access)
+1. **[Fork the repository](https://github.com/arch-err/myriad-dashboard/fork)** (if you don't have write access)
 
 2. **Create or edit a CTF file** in the `ctfs/` directory
 

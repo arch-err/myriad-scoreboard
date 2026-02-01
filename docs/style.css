@@ -10,6 +10,9 @@
   --warning: #d29922;
   --border: #30363d;
   --shadow: rgba(0, 0, 0, 0.3);
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --bronze: #cd7f32;
 }
 
 * {
@@ -102,6 +105,105 @@ h2 {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* Leaderboard */
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.leaderboard-row:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px var(--shadow);
+  border-color: var(--accent);
+}
+
+.leaderboard-row.rank-gold {
+  border-color: var(--gold);
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, var(--bg-secondary) 30%);
+}
+
+.leaderboard-row.rank-silver {
+  border-color: var(--silver);
+  background: linear-gradient(90deg, rgba(192, 192, 192, 0.1) 0%, var(--bg-secondary) 30%);
+}
+
+.leaderboard-row.rank-bronze {
+  border-color: var(--bronze);
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.1) 0%, var(--bg-secondary) 30%);
+}
+
+.leaderboard-rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.rank-gold .leaderboard-rank {
+  color: var(--gold);
+}
+
+.rank-silver .leaderboard-rank {
+  color: var(--silver);
+}
+
+.rank-bronze .leaderboard-rank {
+  color: var(--bronze);
+}
+
+.leaderboard-team {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.leaderboard-score {
+  text-align: center;
+  min-width: 100px;
+}
+
+.leaderboard-score .score-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.leaderboard-score .score-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.leaderboard-stats {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 /* Teams Grid */
@@ -350,6 +452,29 @@ footer p {
 
   .stat {
     flex: 1 1 80px;
+  }
+
+  .leaderboard-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .leaderboard-rank {
+    font-size: 1.25rem;
+    min-width: 2.5rem;
+  }
+
+  .leaderboard-team {
+    flex: 1 1 100%;
+    order: -1;
+    font-size: 1.1rem;
+  }
+
+  .leaderboard-stats {
+    flex: 1;
+    gap: 1rem;
+    font-size: 0.8rem;
   }
 
   .result-item {

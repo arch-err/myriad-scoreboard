@@ -47,8 +47,15 @@ function buildTeamStats(ctfs, teamsMetadata) {
   const teams = {};
 
   for (const ctf of ctfs) {
-    for (const result of ctf.results || []) {
+    // Sort results by CTF rank to determine internal placement
+    const sortedResults = [...(ctf.results || [])].sort((a, b) => a.rank - b.rank);
+    const totalInternalTeams = sortedResults.length;
+
+    for (let i = 0; i < sortedResults.length; i++) {
+      const result = sortedResults[i];
       const teamName = result.team;
+      const internalRank = i + 1; // 1-indexed internal placement
+
       if (!teams[teamName]) {
         const meta = teamsMetadata[teamName] || {};
         teams[teamName] = {
@@ -58,9 +65,13 @@ function buildTeamStats(ctfs, teamsMetadata) {
           results: [],
           totalPoints: 0,
           bestRank: Infinity,
-          ctfCount: 0
+          ctfCount: 0,
+          relativeScores: [] // For calculating overall score
         };
       }
+
+      // Relative score: internal rank / total internal teams (lower is better)
+      const relativeScore = internalRank / totalInternalTeams;
 
       teams[teamName].results.push({
         ctfSlug: ctf.slug,
@@ -68,9 +79,13 @@ function buildTeamStats(ctfs, teamsMetadata) {
         date: ctf.date,
         url: ctf.url,
         rank: result.rank,
-        points: result.points
+        points: result.points,
+        internalRank,
+        totalInternalTeams,
+        relativeScore
       });
 
+      teams[teamName].relativeScores.push(relativeScore);
       teams[teamName].totalPoints += result.points;
       teams[teamName].ctfCount++;
       if (result.rank < teams[teamName].bestRank) {
@@ -79,14 +94,33 @@ function buildTeamStats(ctfs, teamsMetadata) {
     }
   }
 
-  // Sort each team's results by date descending
+  // Calculate averages and overall scores
   for (const team of Object.values(teams)) {
     team.results.sort((a, b) => new Date(b.date) - new Date(a.date));
     team.avgRank = team.results.reduce((sum, r) => sum + r.rank, 0) / team.results.length;
     team.avgRank = Math.round(team.avgRank * 10) / 10;
+
+    // Overall score: average of relative scores (lower is better)
+    team.overallScore = team.relativeScores.reduce((sum, s) => sum + s, 0) / team.relativeScores.length;
+    team.overallScore = Math.round(team.overallScore * 1000) / 1000;
+    delete team.relativeScores; // Clean up temp array
   }
 
   return teams;
+}
+
+function buildLeaderboard(teams) {
+  // Sort teams by overall score (lower is better)
+  return Object.values(teams)
+    .sort((a, b) => a.overallScore - b.overallScore)
+    .map((team, index) => ({
+      rank: index + 1,
+      id: team.id,
+      name: team.name,
+      overallScore: team.overallScore,
+      ctfCount: team.ctfCount,
+      totalPoints: team.totalPoints
+    }));
 }
 
 function copyDir(src, dest) {
@@ -120,10 +154,14 @@ function build() {
   const teams = buildTeamStats(ctfs, teamsMetadata);
   console.log(`Found ${Object.keys(teams).length} teams with results`);
 
+  const leaderboard = buildLeaderboard(teams);
+  console.log(`Built leaderboard with ${leaderboard.length} teams`);
+
   // Build output data
   const data = {
     ctfs,
     teams,
+    leaderboard,
     lastUpdated: new Date().toISOString()
   };
 

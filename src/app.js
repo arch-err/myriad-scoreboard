@@ -37,15 +37,47 @@ function getTeamIdFromName(name) {
   return name.toLowerCase().replace(/\s+/g, '-');
 }
 
+function getLeaderboardRankClass(rank) {
+  if (rank === 1) return 'rank-gold';
+  if (rank === 2) return 'rank-silver';
+  if (rank === 3) return 'rank-bronze';
+  return 'rank-other';
+}
+
+function formatScore(score) {
+  // Display as percentage (lower is better, so invert for display)
+  // Or just show the raw score
+  return score.toFixed(3);
+}
+
 // Dashboard Page
 function renderDashboard() {
   const teamsGrid = document.getElementById('teams-grid');
   const recentResults = document.getElementById('recent-results');
+  const leaderboardEl = document.getElementById('leaderboard');
 
   if (!teamsGrid) return; // Not on dashboard page
 
   const teams = Object.values(data.teams);
   teams.sort((a, b) => a.bestRank - b.bestRank);
+
+  // Render leaderboard
+  if (leaderboardEl && data.leaderboard) {
+    leaderboardEl.innerHTML = data.leaderboard.map(entry => `
+      <a href="team.html?team=${encodeURIComponent(entry.id)}" class="leaderboard-row ${getLeaderboardRankClass(entry.rank)}">
+        <div class="leaderboard-rank">#${entry.rank}</div>
+        <div class="leaderboard-team">${entry.name}</div>
+        <div class="leaderboard-score">
+          <span class="score-value">${formatScore(entry.overallScore)}</span>
+          <span class="score-label">avg relative</span>
+        </div>
+        <div class="leaderboard-stats">
+          <span>${entry.ctfCount} CTFs</span>
+          <span>${formatNumber(entry.totalPoints)} pts</span>
+        </div>
+      </a>
+    `).join('');
+  }
 
   // Update stats
   document.getElementById('total-teams').textContent = teams.length;

@@ -81,7 +81,10 @@
           "date": "2024-05-23T00:00:00.000Z",
           "url": "https://ctf.nahamcon.com",
           "rank": 8,
-          "points": 12400
+          "points": 12400,
+          "internalRank": 1,
+          "totalInternalTeams": 3,
+          "relativeScore": 0.3333333333333333
         },
         {
           "ctfSlug": "picoctf-2024",
@@ -89,7 +92,10 @@
           "date": "2024-03-15T00:00:00.000Z",
           "url": "https://picoctf.org",
           "rank": 15,
-          "points": 4500
+          "points": 4500,
+          "internalRank": 1,
+          "totalInternalTeams": 3,
+          "relativeScore": 0.3333333333333333
         },
         {
           "ctfSlug": "htb-cyber-apocalypse-2024",
@@ -97,13 +103,17 @@
           "date": "2024-03-09T00:00:00.000Z",
           "url": "https://ctf.hackthebox.com",
           "rank": 28,
-          "points": 8750
+          "points": 8750,
+          "internalRank": 1,
+          "totalInternalTeams": 2,
+          "relativeScore": 0.5
         }
       ],
       "totalPoints": 25650,
       "bestRank": 8,
       "ctfCount": 3,
-      "avgRank": 17
+      "avgRank": 17,
+      "overallScore": 0.389
     },
     "Myriad Gamma": {
       "id": "gamma",
@@ -120,7 +130,10 @@
           "date": "2024-05-23T00:00:00.000Z",
           "url": "https://ctf.nahamcon.com",
           "rank": 35,
-          "points": 7800
+          "points": 7800,
+          "internalRank": 2,
+          "totalInternalTeams": 3,
+          "relativeScore": 0.6666666666666666
         },
         {
           "ctfSlug": "picoctf-2024",
@@ -128,13 +141,17 @@
           "date": "2024-03-15T00:00:00.000Z",
           "url": "https://picoctf.org",
           "rank": 78,
-          "points": 2100
+          "points": 2100,
+          "internalRank": 3,
+          "totalInternalTeams": 3,
+          "relativeScore": 1
         }
       ],
       "totalPoints": 9900,
       "bestRank": 35,
       "ctfCount": 2,
-      "avgRank": 56.5
+      "avgRank": 56.5,
+      "overallScore": 0.833
     },
     "Myriad Delta": {
       "id": "delta",
@@ -150,13 +167,17 @@
           "date": "2024-05-23T00:00:00.000Z",
           "url": "https://ctf.nahamcon.com",
           "rank": 120,
-          "points": 3500
+          "points": 3500,
+          "internalRank": 3,
+          "totalInternalTeams": 3,
+          "relativeScore": 1
         }
       ],
       "totalPoints": 3500,
       "bestRank": 120,
       "ctfCount": 1,
-      "avgRank": 120
+      "avgRank": 120,
+      "overallScore": 1
     },
     "Myriad Beta": {
       "id": "beta",
@@ -172,7 +193,10 @@
           "date": "2024-03-15T00:00:00.000Z",
           "url": "https://picoctf.org",
           "rank": 42,
-          "points": 3200
+          "points": 3200,
+          "internalRank": 2,
+          "totalInternalTeams": 3,
+          "relativeScore": 0.6666666666666666
         },
         {
           "ctfSlug": "htb-cyber-apocalypse-2024",
@@ -180,14 +204,52 @@
           "date": "2024-03-09T00:00:00.000Z",
           "url": "https://ctf.hackthebox.com",
           "rank": 56,
-          "points": 6400
+          "points": 6400,
+          "internalRank": 2,
+          "totalInternalTeams": 2,
+          "relativeScore": 1
         }
       ],
       "totalPoints": 9600,
       "bestRank": 42,
       "ctfCount": 2,
-      "avgRank": 49
+      "avgRank": 49,
+      "overallScore": 0.833
     }
   },
-  "lastUpdated": "2026-02-01T19:11:58.631Z"
+  "leaderboard": [
+    {
+      "rank": 1,
+      "id": "alpha",
+      "name": "Myriad Alpha",
+      "overallScore": 0.389,
+      "ctfCount": 3,
+      "totalPoints": 25650
+    },
+    {
+      "rank": 2,
+      "id": "gamma",
+      "name": "Myriad Gamma",
+      "overallScore": 0.833,
+      "ctfCount": 2,
+      "totalPoints": 9900
+    },
+    {
+      "rank": 3,
+      "id": "beta",
+      "name": "Myriad Beta",
+      "overallScore": 0.833,
+      "ctfCount": 2,
+      "totalPoints": 9600
+    },
+    {
+      "rank": 4,
+      "id": "delta",
+      "name": "Myriad Delta",
+      "overallScore": 1,
+      "ctfCount": 1,
+      "totalPoints": 3500
+    }
+  ],
+  "lastUpdated": "2026-02-01T19:20:33.753Z"
 }

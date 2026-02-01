@@ -172,12 +172,6 @@ function renderTeamDetail() {
 
   // Update header
   teamName.textContent = team.name;
-  const membersEl = document.getElementById('team-members');
-  if (team.members && team.members.length > 0) {
-    membersEl.textContent = `Members: ${team.members.join(', ')}`;
-  } else {
-    membersEl.textContent = '';
-  }
 
   // Update stats
   document.getElementById('stat-ctfs').textContent = team.ctfCount;

@@ -84,7 +84,7 @@
           "points": 12400,
           "internalRank": 1,
           "totalInternalTeams": 3,
-          "relativeScore": 0.3333333333333333
+          "relativeScore": 0.6666666666666667
         },
         {
           "ctfSlug": "picoctf-2024",
@@ -95,7 +95,7 @@
           "points": 4500,
           "internalRank": 1,
           "totalInternalTeams": 3,
-          "relativeScore": 0.3333333333333333
+          "relativeScore": 0.6666666666666667
         },
         {
           "ctfSlug": "htb-cyber-apocalypse-2024",
@@ -113,7 +113,7 @@
       "bestRank": 8,
       "ctfCount": 3,
       "avgRank": 17,
-      "overallScore": 0.389
+      "overallScore": 0.611
     },
     "Myriad Gamma": {
       "id": "gamma",
@@ -133,7 +133,7 @@
           "points": 7800,
           "internalRank": 2,
           "totalInternalTeams": 3,
-          "relativeScore": 0.6666666666666666
+          "relativeScore": 0.33333333333333337
         },
         {
           "ctfSlug": "picoctf-2024",
@@ -144,14 +144,14 @@
           "points": 2100,
           "internalRank": 3,
           "totalInternalTeams": 3,
-          "relativeScore": 1
+          "relativeScore": 0
         }
       ],
       "totalPoints": 9900,
       "bestRank": 35,
       "ctfCount": 2,
       "avgRank": 56.5,
-      "overallScore": 0.833
+      "overallScore": 0.167
     },
     "Myriad Delta": {
       "id": "delta",
@@ -170,14 +170,14 @@
           "points": 3500,
           "internalRank": 3,
           "totalInternalTeams": 3,
-          "relativeScore": 1
+          "relativeScore": 0
         }
       ],
       "totalPoints": 3500,
       "bestRank": 120,
       "ctfCount": 1,
       "avgRank": 120,
-      "overallScore": 1
+      "overallScore": 0
     },
     "Myriad Beta": {
       "id": "beta",
@@ -196,7 +196,7 @@
           "points": 3200,
           "internalRank": 2,
           "totalInternalTeams": 3,
-          "relativeScore": 0.6666666666666666
+          "relativeScore": 0.33333333333333337
         },
         {
           "ctfSlug": "htb-cyber-apocalypse-2024",
@@ -207,14 +207,14 @@
           "points": 6400,
           "internalRank": 2,
           "totalInternalTeams": 2,
-          "relativeScore": 1
+          "relativeScore": 0
         }
       ],
       "totalPoints": 9600,
       "bestRank": 42,
       "ctfCount": 2,
       "avgRank": 49,
-      "overallScore": 0.833
+      "overallScore": 0.167
     }
   },
   "leaderboard": [
@@ -222,7 +222,7 @@
       "rank": 1,
       "id": "alpha",
       "name": "Myriad Alpha",
-      "overallScore": 0.389,
+      "overallScore": 0.611,
       "ctfCount": 3,
       "totalPoints": 25650
     },
@@ -230,7 +230,7 @@
       "rank": 2,
       "id": "gamma",
       "name": "Myriad Gamma",
-      "overallScore": 0.833,
+      "overallScore": 0.167,
       "ctfCount": 2,
       "totalPoints": 9900
     },
@@ -238,7 +238,7 @@
       "rank": 3,
       "id": "beta",
       "name": "Myriad Beta",
-      "overallScore": 0.833,
+      "overallScore": 0.167,
       "ctfCount": 2,
       "totalPoints": 9600
     },
@@ -246,10 +246,10 @@
       "rank": 4,
       "id": "delta",
       "name": "Myriad Delta",
-      "overallScore": 1,
+      "overallScore": 0,
       "ctfCount": 1,
       "totalPoints": 3500
     }
   ],
-  "lastUpdated": "2026-02-01T20:04:57.824Z"
+  "lastUpdated": "2026-02-01T20:09:37.429Z"
 }

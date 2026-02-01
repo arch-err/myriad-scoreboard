@@ -95,8 +95,8 @@ results:
       <p>The overall leaderboard uses <strong>relative internal placement</strong>:</p>
       <ul>
         <li>For each CTF, teams are ranked by their CTF placement</li>
-        <li>Score = (internal rank) / (total internal teams in that CTF)</li>
-        <li>Lower average score = better overall ranking</li>
+        <li>Score = 1 - (internal rank / total internal teams)</li>
+        <li>Higher total score = better overall ranking</li>
       </ul>
 
       <h3>Example</h3>
@@ -113,17 +113,17 @@ results:
           <tr>
             <td>Team A (best CTF placement)</td>
             <td>1st</td>
-            <td>1/3 = 0.333</td>
+            <td>1 - 1/3 = 0.667</td>
           </tr>
           <tr>
             <td>Team B</td>
             <td>2nd</td>
-            <td>2/3 = 0.667</td>
+            <td>1 - 2/3 = 0.333</td>
           </tr>
           <tr>
             <td>Team C</td>
             <td>3rd</td>
-            <td>3/3 = 1.000</td>
+            <td>1 - 3/3 = 0.000</td>
           </tr>
         </tbody>
       </table>

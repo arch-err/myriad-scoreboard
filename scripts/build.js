@@ -70,8 +70,8 @@ function buildTeamStats(ctfs, teamsMetadata) {
         };
       }
 
-      // Relative score: internal rank / total internal teams (lower is better)
-      const relativeScore = internalRank / totalInternalTeams;
+      // Relative score: 1 - (internal rank / total internal teams) - higher is better
+      const relativeScore = 1 - (internalRank / totalInternalTeams);
 
       teams[teamName].results.push({
         ctfSlug: ctf.slug,
@@ -110,9 +110,9 @@ function buildTeamStats(ctfs, teamsMetadata) {
 }
 
 function buildLeaderboard(teams) {
-  // Sort teams by overall score (lower is better)
+  // Sort teams by overall score (higher is better)
   return Object.values(teams)
-    .sort((a, b) => a.overallScore - b.overallScore)
+    .sort((a, b) => b.overallScore - a.overallScore)
     .map((team, index) => ({
       rank: index + 1,
       id: team.id,

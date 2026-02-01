@@ -70,14 +70,14 @@ For those without GitHub access or who prefer not to make direct edits.
 The overall leaderboard uses **relative internal placement**:
 
 - For each CTF, teams are ranked by their CTF placement
-- Score = (internal rank) / (total internal teams in that CTF)
-- Lower average score = better overall ranking
+- Score = 1 - (internal rank / total internal teams)
+- Higher total score = better overall ranking
 
 **Example:**
 - CTF has 3 internal teams participating
-- Team A places best → internal rank 1 → score 1/3 = 0.333
-- Team B places second → internal rank 2 → score 2/3 = 0.667
-- Team C places third → internal rank 3 → score 3/3 = 1.000
+- Team A places best → internal rank 1 → score 1 - 1/3 = 0.667
+- Team B places second → internal rank 2 → score 1 - 2/3 = 0.333
+- Team C places third → internal rank 3 → score 1 - 3/3 = 0.000
 
 ## Questions?
 

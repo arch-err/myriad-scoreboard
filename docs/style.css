@@ -103,7 +103,7 @@ header h1 {
 
 .header-action:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .header-action svg {

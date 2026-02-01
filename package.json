@@ -1,5 +1,5 @@
 {
-  "name": "myriad-dashboard",
+  "name": "myriad-scoreboard",
   "version": "1.0.0",
   "description": "Git-powered CTF scoreboard tracking team performance",
   "scripts": {

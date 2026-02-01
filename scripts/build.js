@@ -142,7 +142,7 @@ function copyDir(src, dest) {
 }
 
 function build() {
-  console.log('Building myriad-dashboard...');
+  console.log('Building myriad-scoreboard...');
 
   // Load data
   const ctfs = loadCtfs();

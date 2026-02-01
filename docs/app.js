@@ -1,4 +1,4 @@
-// Myriad Dashboard - Frontend Application
+// Myriad Scoreboard - Frontend Application
 
 let data = null;
 
@@ -168,7 +168,7 @@ function renderTeamDetail() {
   }
 
   // Update page title
-  document.title = `${team.name} - Myriad Dashboard`;
+  document.title = `${team.name} - Myriad Scoreboard`;
 
   // Update header
   teamName.textContent = team.name;

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Git-powered CTF scoreboard tracking team performance",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "bun scripts/build.js",
+    "dev": "bun run build && bun scripts/dev.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"

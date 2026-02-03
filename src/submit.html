@@ -168,7 +168,7 @@
           class="appearance-none bg-transparent text-inherit border-none font-inherit text-sm font-semibold cursor-pointer outline-none max-md:absolute max-md:inset-0 max-md:opacity-0"
         >
           <template x-for="t in themes" :key="t.value">
-            <option :value="t.value" x-text="t.name" class="bg-bg-secondary text-text-primary"></option>
+            <option :value="t.value" :selected="t.value === theme" x-text="t.name" class="bg-bg-secondary text-text-primary"></option>
           </template>
         </select>
       </label>

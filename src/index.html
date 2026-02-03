@@ -170,7 +170,7 @@
             class="appearance-none bg-transparent text-inherit border-none font-inherit text-sm font-semibold cursor-pointer outline-none max-md:absolute max-md:inset-0 max-md:opacity-0"
           >
             <template x-for="t in themes" :key="t.value">
-              <option :value="t.value" x-text="t.name" class="bg-bg-secondary text-text-primary"></option>
+              <option :value="t.value" :selected="t.value === theme" x-text="t.name" class="bg-bg-secondary text-text-primary"></option>
             </template>
           </select>
         </label>
@@ -237,7 +237,7 @@
             <span class="block text-4xl font-bold text-accent" x-text="data.ctfs.length"></span>
             <span class="text-sm text-text-secondary uppercase tracking-wide">CTFs</span>
           </div>
-          <div class="text-center max-md:flex-1 max-md:min-w-20">
+          <div class="text-center max-md:flex-1 max-md:min-w-28">
             <span class="block text-4xl font-bold text-accent" x-text="formatNumber(totalPoints)"></span>
             <span class="text-sm text-text-secondary uppercase tracking-wide">Total Points</span>
           </div>

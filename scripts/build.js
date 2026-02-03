@@ -8,7 +8,7 @@ const ROOT = path.join(__dirname, '..');
 const CTFS_DIR = path.join(ROOT, 'ctfs');
 const TEAMS_FILE = path.join(ROOT, 'teams', 'teams.yaml');
 const SRC_DIR = path.join(ROOT, 'src');
-const DOCS_DIR = path.join(ROOT, 'docs');
+const DIST_DIR = path.join(ROOT, 'dist');
 
 function loadCtfs() {
   const ctfs = [];
@@ -166,16 +166,16 @@ function build() {
   };
 
   // Ensure docs dir exists
-  if (!fs.existsSync(DOCS_DIR)) {
-    fs.mkdirSync(DOCS_DIR, { recursive: true });
+  if (!fs.existsSync(DIST_DIR)) {
+    fs.mkdirSync(DIST_DIR, { recursive: true });
   }
 
   // Copy src to docs
-  copyDir(SRC_DIR, DOCS_DIR);
-  console.log('Copied src/ to docs/');
+  copyDir(SRC_DIR, DIST_DIR);
+  console.log('Copied src/ to dist/');
 
   // Write data.json
-  const dataPath = path.join(DOCS_DIR, 'data.json');
+  const dataPath = path.join(DIST_DIR, 'data.json');
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
   console.log('Generated data.json');
 

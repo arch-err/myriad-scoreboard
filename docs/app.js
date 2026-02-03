@@ -2,6 +2,28 @@
 
 let data = null;
 
+// Theme Management
+function initTheme() {
+  const savedTheme = localStorage.getItem('myriad-theme') || 'default';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  const themeSelect = document.getElementById('theme-select');
+  if (themeSelect) {
+    themeSelect.value = savedTheme;
+    themeSelect.addEventListener('change', (e) => {
+      const theme = e.target.value;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('myriad-theme', theme);
+    });
+  }
+}
+
+// Initialize theme immediately to prevent flash
+(function() {
+  const savedTheme = localStorage.getItem('myriad-theme') || 'default';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+})();
+
 async function loadData() {
   try {
     const response = await fetch('data.json');
@@ -200,6 +222,8 @@ function renderTeamDetail() {
 
 // Initialize
 async function init() {
+  initTheme();
+
   try {
     await loadData();
 
